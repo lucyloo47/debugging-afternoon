@@ -15,7 +15,7 @@ class StoreFront extends Component {
         axios.get("https://practiceapi.devmountain.com/products/")
             .then((response) => {
                 this.setState({
-                    products: response.data
+                    'products': response.data
                 })
             })
     }

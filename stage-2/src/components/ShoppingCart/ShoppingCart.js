@@ -14,20 +14,22 @@ class ShoppingCart extends Component {
         this.setState({
             shoppingCart: nextProps.shoppingCart
         })
-    }
+    } 
 
     render() {
         let shoppingCartDisplay = this.state.shoppingCart.map((element, index) => {
-            <div className="shopping-cart-product-container">
-                <img src={element.image} alt="" />
-                <div className="shopping-cart-info">
-                    <h2>{element.title}</h2>
-                    <h2>{"$" + element.price + ".00"}</h2>
-                    <div className="shopping-cart-button-container">
-                        <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(element)}>Remove From Shopping Cart</button>
-                    </div>
+            return(
+                <div className="shopping-cart-product-container">
+                    <img src={element.image} alt="" />
+                    <div className="shopping-cart-info">
+                        <h2>{element.title}</h2>
+                        <h2>{"$" + element.price + ".00"}</h2>
+                         <div className="shopping-cart-button-container">
+                            <button className="shopping-cart-button" onClick={() => this.props.removeFromShoppingCart(element)}>Remove From Shopping Cart</button>
+                        </div>
                 </div>
             </div>
+            )
         })
         return (
             <div className="shopping-cart-container">
